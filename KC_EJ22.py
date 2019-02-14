@@ -5,7 +5,7 @@
 # Ejemplo
 # >>Entradas: Pedro 23, Bob 15, Patricio 7, Pablo 30, Betty 20, Pebbles 2 ...
 # >>Salida: Tienen derecho al voto Pedro, Pablo y Betty.
-
+# TODO: Falta el "y" del final.
 
 def getNombre(texto):
     while True:
