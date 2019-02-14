@@ -1,17 +1,14 @@
-# KC_EJ23
-# Crear un programa que reciba los el nombre y las calificaciones de N personas,
-# mientras que el usuario no escriba “terminar”.
-# Al terminar deberá mostrar la media de calificaciones de cada persona.
+# KC_EJ24
+# Modificar el programa KC_EJ23 para que muestre los resultados ordenados por la media,
+# de forma descendente.
 # Ejemplo
 # >>Entradas:
 # Pedro 6, 8, 7
 # Pablo 9, 9, 10
 # Bob 10, 10, 10
 # terminar
-# >>Salida:
-# Pedro 7
-# Pablo 9
-# Bob 10
+# >>Salida: Bob 10 Pablo 9 Pedro 7
+
 
 TERMINAR = "terminar"
 
@@ -52,6 +49,6 @@ while True:
 if len(calificaciones) == 0:
     print("Resultado: No se han introducido datos.")
 else:
-    print("Resultado:")
-    for c in calificaciones:
-        print(f"\t{c[0]} {c[1]}.")
+    calificaciones.sort(key=lambda c: c[1], reverse=True)
+    textoResultado = ' '.join(f"{c[0]} {c[1]}" for c in calificaciones)
+    print(f"Resultado: {textoResultado}.")
