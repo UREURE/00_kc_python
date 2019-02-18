@@ -7,9 +7,9 @@
 
 
 class Alumno():
-    def __init__(self, matricula, nombre, apellido, email):
+    def __init__(self, matricula, nombre, apellido, email, inscrito):
         self.__numero_matricula = matricula
         self.__nombre = nombre
         self.__apellido = apellido
         self.__correo_electronico = email
-        self.__estatus_inscrito = True
+        self.__estatus_inscrito = inscrito

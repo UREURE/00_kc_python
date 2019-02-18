@@ -11,12 +11,12 @@ import datetime
 
 
 class Alumno():
-    def __init__(self, matricula, nombre, apellido, email):
+    def __init__(self, matricula, nombre, apellido, email, inscrito):
         self.__numero_matricula = matricula
         self.__nombre = nombre
         self.__apellido = apellido
         self.__correo_electronico = email
-        self.__estatus_inscrito = True
+        self.__estatus_inscrito = inscrito
 
     def getNombre(self):
         return self.__nombre
@@ -26,16 +26,16 @@ class Alumno():
 
 
 class Modulo():
-    def __init__(self):
+    def __init__(self, fechaInicio, fechaFin):
         self.__listado_alumnos = []
-        self.__fechaInicio = datetime.date(1900, 1, 1)
-        self.__fechaFin = datetime.date(1900, 1, 1)
+        self.__fechaInicio = fechaInicio
+        self.__fechaFin = fechaFin
 
     def agregarAlumno(self, alumno):
         self.__listado_alumnos.append(alumno)
 
-    def buscarAlumno(self, nombreAlumno):
-        return [x for x in self.__listado_alumnos if x.getNombre().lower() == nombreAlumno.low()]
+    def buscarAlumnoNombre(self, nombreAlumno):
+        return [x for x in self.__listado_alumnos if x.getNombre().lower() == nombreAlumno.lower()]
 
-    def getAlumnosInscritos(self, nombreAlumno):
-        return [x for x in self.__listado_alumnos if x.__estatus_inscrito()]
+    def getAlumnosInscritos(self):
+        return [x for x in self.__listado_alumnos if x.getEstatusInscrito()]
